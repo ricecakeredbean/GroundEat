@@ -26,7 +26,7 @@ public class PlayerMoveMent : MonoBehaviour
                 }
                 yield return null;
             }
-            Vector3 pos = Camera.main.ScreenToWorldPoint(new Vector3(playerPos.x * playerPos.x / 1920, playerPos.y * playerPos.y / 1080, 10));
+            Vector3 pos = GameManager.instance.IndexToPos(playerPos.x, playerPos.y);
             Vector3 orzPos = transform.position;
             float per = 1 / moveT;
             for (float t = 0; t<moveT;t+=Time.deltaTime)

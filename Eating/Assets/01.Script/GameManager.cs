@@ -13,13 +13,13 @@ public class GameManager : MonoSingleTon<GameManager>
     {
         base.Awake();
         indexPer.x = 1920f / mainSprite.sprite.texture.width;
-        indexPer.x = 1080f / mainSprite.sprite.texture.height;
+        indexPer.y = 1080f / mainSprite.sprite.texture.height;
         worldPer.x = mainSprite.sprite.texture.width / 1920;
-        worldPer.x = mainSprite.sprite.texture.height / 1080;
+        worldPer.y = mainSprite.sprite.texture.height / 1080;
     }
 
     public Vector3 IndexToPos(float x, float y)
     {
-       return Camera.main.WorldToScreenPoint(new Vector3(x * indexPer.x, y * indexPer.y, 10));
+       return Camera.main.ScreenToWorldPoint(new Vector3(x * indexPer.x, y * indexPer.y, 10));
     }
 }

@@ -6,7 +6,7 @@ using System.Linq;
 
 public class MonoSingleTon<T> : MonoBehaviour  where T  : MonoBehaviour
 {
-    public List<GameObject> objectList;
+    //public List<GameObject> objectList;
 
     public static T instance;
     protected virtual void Awake()
