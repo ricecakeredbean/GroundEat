@@ -264,8 +264,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: c3dbfca02e91ad548909e4ecd1c3ac50, type: 3}
+  m_SortingOrder: -1
+  m_Sprite: {fileID: 21300000, guid: 72ac4938a29efbb4d881b345857fa28e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -321,8 +321,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cdad0d21610eac40b46fc002d627cc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveInterval: 0
   playerPos: {x: 0, y: 0}
-  moveT: 0.002
 --- !u!212 &753908769
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -420,6 +420,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainSprite: {fileID: 697268298}
+  decureTexture: {fileID: 2800000, guid: 72ac4938a29efbb4d881b345857fa28e, type: 3}
+  cureTexture: {fileID: 2800000, guid: 72ac4938a29efbb4d881b345857fa28e, type: 3}
 --- !u!4 &1256461029
 Transform:
   m_ObjectHideFlags: 0
@@ -427,7 +429,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1256461027}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
