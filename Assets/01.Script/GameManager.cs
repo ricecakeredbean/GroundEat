@@ -11,8 +11,10 @@ public class GameManager : MonoSingleTon<GameManager>
     [SerializeField] private Text timeText;
     [SerializeField] private Text perText;
     [SerializeField] private Image[] lifeImage;
+    [SerializeField] private GameObject endPanel;
+    [SerializeField] private Text gameStateText;
 
-    Func<bool> protectedFunc;
+    private Func<bool> protectedFunc;
 
     #region value
     private float time;
@@ -71,16 +73,9 @@ public class GameManager : MonoSingleTon<GameManager>
 
     private void GameEnd()
     {
-        for (int i = 0; i < lifeImage.Length; i++)
-        {
-            lifeImage[i].enabled = false;
-        }
-        for (int i = 0; i < life; i++)
-        {
-            lifeImage[i].enabled = true;
-        }
         Time.timeScale = 0;
-        Debug.Log("GameEnd");
+        endPanel.SetActive(true);
+
     }
 
     public void PercentRefresh(float fillPixelCount)
@@ -89,6 +84,8 @@ public class GameManager : MonoSingleTon<GameManager>
         if (per > 85f)
         {
             GameEnd();
+            gameStateText.text = "Game Clear";
+            gameStateText.color = Color.yellow;
         }
     }
     public void LifeHit(int sumLife)
@@ -105,6 +102,8 @@ public class GameManager : MonoSingleTon<GameManager>
             {
                 Destroy(player);
                 GameEnd();
+                gameStateText.text = "Game Over";
+                gameStateText.color = Color.red;
             }
         }
     }

@@ -26,7 +26,7 @@ public class PixelManager : MonoSingleTon<PixelManager>
     private int spriteX;
     private int spriteY;
 
-    PixelState[,] pixelStates;
+    private PixelState[,] pixelStates;
 
     private Color[] pixelColors = new Color[4] { Color.white, Color.red, Color.blue, Color.black };
 
@@ -105,7 +105,7 @@ public class PixelManager : MonoSingleTon<PixelManager>
 
         Vector2Int operationPos;
 
-        
+
         {
 
             operationPos = startPos + Vector2Int.right;
@@ -132,57 +132,17 @@ public class PixelManager : MonoSingleTon<PixelManager>
                     if (FloodChekPixel(operPos, closePixelHashSet1))
                     {
                         AddPixel_1(operPos);
-                        //activePixelStack1.Push(operPos);
-                        //closePixelHashSet1.Add(comparePos1);
                     }
                     operPos = comparePos2 + diractions[i];
                     if (FloodChekPixel(operPos, closePixelHashSet2))
                     {
                         AddPixel_2(operPos);
-                        //activePixelStack2.Push(operPos);
-                        //closePixelHashSet2.Add(comparePos2);2
                     }
                 }
             }
 
         }
 
-
-
-        //operationPos = startPos + Vector2Int.right;
-        //if (pixelStates[startPos.x, startPos.y] == PixelState.moveLine && pixelStates[operationPos.x, operationPos.y] == PixelState.moveLine)
-        //{
-        //    activePixelStack1.Push(startPos + Vector2Int.up);
-        //    activePixelStack2.Push(startPos + Vector2Int.down);
-        //}
-        //else
-        //{
-        //    activePixelStack1.Push(startPos + Vector2Int.left);
-        //    activePixelStack2.Push(startPos + Vector2Int.right);
-        //}
-
-        //while (activePixelStack1.Count != 0 && activePixelStack2.Count != 0)
-        //{
-        //    Vector2Int comparePos1 = activePixelStack1.Pop();
-        //    Vector2Int comparePos2 = activePixelStack2.Pop();
-        //    Vector2Int[] diractions = new Vector2Int[4] { Vector2Int.up, Vector2Int.down, Vector2Int.left, Vector2Int.right };
-
-        //    for (int i = 0; i < 4; i++)
-        //    {
-        //        Vector2Int operPos = comparePos1 + diractions[i];
-        //        if (FloodChekPixel(operPos, closePixelHashSet1))
-        //        {
-        //            activePixelStack1.Push(operPos);
-        //            closePixelHashSet1.Add(comparePos1);
-        //        }
-        //        operPos = comparePos2 + diractions[i];
-        //        if (FloodChekPixel(operPos, closePixelHashSet2))
-        //        {
-        //            activePixelStack2.Push(operPos);
-        //            closePixelHashSet2.Add(comparePos2);
-        //        }
-        //    }
-        //}
         List<Vector2Int> fillList;
         if (activePixelStack1.Count == 0)
         {
