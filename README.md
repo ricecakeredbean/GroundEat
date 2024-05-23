@@ -1,4 +1,4 @@
-<h1 align ="center">Hero Commander</h1>
+<h1 align ="center">GroundEat</h1>
 <div align = "left">
   <h2>프로젝트 소개</h2>
   GroundEat은 슈퍼퀵스라는 게임을 모티브로한 땅따먹기 게임입니다. FloodFill알고리즘을 이용한 게임제작을 연습한 유니티 프로젝트입니다.
